@@ -1,0 +1,6 @@
+sue_global_css.settings:
+  title: 'SUE Global CSS'
+  description: 'Configure global CSS.'
+  parent: system.admin_config_development
+  route_name: sue_global_css.settings
+  weight: 100

@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains sue_global_css.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function sue_global_css_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.sue_global_css':
+      return '<p>' . t('Allows setting global CSS through a UI.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function sue_global_css_page_attachments(array &$attachments) {
+  // Check if we're on an admin page
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    return;
+  }
+
+  $config = \Drupal::config('sue_global_css.settings');
+  $css_updated = $config->get('css_updated');
+  
+  if ($css_updated) {
+    $css_file = 'public://sue_global_css/global.css';
+    if (file_exists($css_file)) {
+      $attachments['#attached']['library'][] = 'sue_global_css/global_styles';
+    } else {
+      \Drupal::logger('sue_global_css')->warning('Global CSS file not found at @path', ['@path' => $css_file]);
+    }
+  }
+}

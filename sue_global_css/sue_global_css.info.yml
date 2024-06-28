@@ -1,0 +1,6 @@
+name: SUE Global CSS
+type: module
+description: 'Allows setting global CSS through a UI.'
+package: Custom
+core_version_requirement: ^9 || ^10 || ^11
+configure: sue_global_css.settings

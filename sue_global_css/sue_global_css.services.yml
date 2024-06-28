@@ -1,0 +1,4 @@
+services:
+  sue_global_css.file_handler:
+    class: Drupal\sue_global_css\SueGlobalCssFileHandler
+    arguments: ['@file_system', '@config.factory', '@logger.factory', '@cache_tags.invalidator']

@@ -1,0 +1,5 @@
+global_styles:
+  version: VERSION
+  css:
+    theme:
+      public://sue_global_css/global.css: {}

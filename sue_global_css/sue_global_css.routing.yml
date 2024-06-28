@@ -1,0 +1,7 @@
+sue_global_css.settings:
+  path: '/admin/config/development/sue-global-css'
+  defaults:
+    _form: '\Drupal\sue_global_css\Form\GlobalCssSettingsForm'
+    _title: 'SUE Global CSS Settings'
+  requirements:
+    _permission: 'administer site configuration'
