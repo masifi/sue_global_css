@@ -3,3 +3,4 @@ After installing the module go to `site/admin/config/development/sue-global-css`
 # Note
 - This module only applies for the front-end theme.
 - This module is designed for injecting custom css styles
+- It is desigend for Salahaddin University-Erbil college websites.
